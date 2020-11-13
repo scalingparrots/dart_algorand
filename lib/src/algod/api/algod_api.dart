@@ -32,7 +32,7 @@ class AlgodApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/account/{address}'
+    String _path = '/v2/accounts/{address}'
         .replaceAll('{' r'address' '}', address.toString());
 
     Map<String, dynamic> queryParams = {};
