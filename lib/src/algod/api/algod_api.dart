@@ -60,7 +60,7 @@ class AlgodApi {
         .then((response) {
       var serializer = _serializers.serializerForType(Account);
       var data =
-          _serializers.deserializeWith<Account>(serializer, response.data);
+          _serializers.deserializeWith<Account>(serializer, response.data['account']);
 
       return Response<Account>(
         data: data,
