@@ -71,7 +71,7 @@ class _$TransactionParamsSerializer
       iterator.moveNext();
       final dynamic value = iterator.current;
       switch (key) {
-        case 'consensusVersion':
+        case 'consensus-version':
           result.consensusVersion = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
@@ -79,19 +79,19 @@ class _$TransactionParamsSerializer
           result.fee = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
-        case 'genesisID':
+        case 'genesis-id':
           result.genesisID = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'genesishashb64':
+        case 'genesis-hash':
           result.genesishashb64 = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'lastRound':
+        case 'last-round':
           result.lastRound = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
-        case 'minFee':
+        case 'min-fee':
           result.minFee = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
@@ -164,7 +164,7 @@ class _$TransactionParams extends TransactionParams {
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TransactionParams')
-          ..add('consensusVersion', consensusVersion)
+          ..add('consensus-version', consensusVersion)
           ..add('fee', fee)
           ..add('genesisID', genesisID)
           ..add('genesishashb64', genesishashb64)
