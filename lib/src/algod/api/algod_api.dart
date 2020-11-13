@@ -795,7 +795,7 @@ class AlgodApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/account/{address}/transaction/{txid}'
+    String _path = '/v2/accounts/{address}/transaction/{txid}'
         .replaceAll('{' r'address' '}', address.toString())
         .replaceAll('{' r'txid' '}', txid.toString());
 
@@ -899,7 +899,7 @@ class AlgodApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/account/{address}/transactions'
+    String _path = '/v2/accounts/{address}/transactions'
         .replaceAll('{' r'address' '}', address.toString());
 
     Map<String, dynamic> queryParams = {};
