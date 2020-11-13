@@ -8,42 +8,42 @@ import '../model/create_wallet_request.dart';
 import '../model/sign_multisig_request.dart';
 import '../model/wallet_info_request.dart';
 import '../model/sign_program_request.dart';
-import '../model/apiv1_delete_multisig_response.dart';
-import '../model/apiv1_post_multisig_transaction_sign_response.dart';
-import '../model/apiv1_get_wallets_response.dart';
-import '../model/apiv1_post_wallet_renew_response.dart';
-import '../model/apiv1_post_multisig_export_response.dart';
-import '../model/apiv1_post_key_import_response.dart';
-import '../model/apiv1_post_wallet_response.dart';
-import '../model/apiv1_post_key_response.dart';
-import '../model/apiv1_post_program_sign_response.dart';
-import '../model/apiv1_post_key_list_response.dart';
+import '../model/apiv2_delete_multisig_response.dart';
+import '../model/apiv2_post_multisig_transaction_sign_response.dart';
+import '../model/apiv2_get_wallets_response.dart';
+import '../model/apiv2_post_wallet_renew_response.dart';
+import '../model/apiv2_post_multisig_export_response.dart';
+import '../model/apiv2_post_key_import_response.dart';
+import '../model/apiv2_post_wallet_response.dart';
+import '../model/apiv2_post_key_response.dart';
+import '../model/apiv2_post_program_sign_response.dart';
+import '../model/apiv2_post_key_list_response.dart';
 import '../model/delete_key_request.dart';
 import '../model/export_key_request.dart';
-import '../model/apiv1_post_wallet_init_response.dart';
+import '../model/apiv2_post_wallet_init_response.dart';
 import '../model/delete_multisig_request.dart';
-import '../model/apiv1_post_multisig_program_sign_response.dart';
+import '../model/apiv2_post_multisig_program_sign_response.dart';
 import '../model/export_master_key_request.dart';
 import '../model/generate_key_request.dart';
-import '../model/apiv1_post_master_key_export_response.dart';
-import '../model/apiv1_post_wallet_info_response.dart';
+import '../model/apiv2_post_master_key_export_response.dart';
+import '../model/apiv2_post_wallet_info_response.dart';
 import '../model/import_key_request.dart';
 import '../model/init_wallet_handle_token_request.dart';
 import '../model/renew_wallet_handle_token_request.dart';
 import '../model/sign_transaction_request.dart';
 import '../model/release_wallet_handle_token_request.dart';
 import '../model/rename_wallet_request.dart';
-import '../model/apiv1_post_wallet_rename_response.dart';
-import '../model/apiv1_delete_key_response.dart';
+import '../model/apiv2_post_wallet_rename_response.dart';
+import '../model/apiv2_delete_key_response.dart';
 import '../model/sign_program_multisig_request.dart';
 import '../model/versions_response.dart';
 import '../model/import_multisig_request.dart';
-import '../model/apiv1_post_transaction_sign_response.dart';
-import '../model/apiv1_post_key_export_response.dart';
+import '../model/apiv2_post_transaction_sign_response.dart';
+import '../model/apiv2_post_key_export_response.dart';
 import '../model/export_multisig_request.dart';
-import '../model/apiv1_post_multisig_import_response.dart';
-import '../model/apiv1_post_multisig_list_response.dart';
-import '../model/apiv1_post_wallet_release_response.dart';
+import '../model/apiv2_post_multisig_import_response.dart';
+import '../model/apiv2_post_multisig_list_response.dart';
+import '../model/apiv2_post_wallet_release_response.dart';
 import '../model/list_keys_request.dart';
 
 class KmdApi {
@@ -60,7 +60,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/wallet';
+    String _path = '/v2/wallet';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -114,7 +114,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/key';
+    String _path = '/v2/key';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -168,7 +168,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/multisig';
+    String _path = '/v2/multisig';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -222,7 +222,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/key/export';
+    String _path = '/v2/key/export';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -271,13 +271,13 @@ class KmdApi {
 
   /// Export the master derivation key from a wallet
   ///
-  /// Export the master derivation key from the wallet. This key is a master \&quot;backup\&quot; key for the underlying wallet. With it, you can regenerate all of the wallets that have been generated with this wallet&#39;s &#x60;POST /v1/key&#x60; endpoint. This key will not allow you to recover keys imported from other wallets, however.
+  /// Export the master derivation key from the wallet. This key is a master \&quot;backup\&quot; key for the underlying wallet. With it, you can regenerate all of the wallets that have been generated with this wallet&#39;s &#x60;POST /v2/key&#x60; endpoint. This key will not allow you to recover keys imported from other wallets, however.
   Future<Response<APIV1POSTMasterKeyExportResponse>> exportMasterKey(
     ExportMasterKeyRequest exportMasterKeyRequest, {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/master-key/export';
+    String _path = '/v2/master-key/export';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -332,7 +332,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/multisig/export';
+    String _path = '/v2/multisig/export';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -387,7 +387,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/key';
+    String _path = '/v2/key';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -487,7 +487,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/wallet/info';
+    String _path = '/v2/wallet/info';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -542,7 +542,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/key/import';
+    String _path = '/v2/key/import';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -597,7 +597,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/multisig/import';
+    String _path = '/v2/multisig/import';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -646,13 +646,13 @@ class KmdApi {
 
   /// Initialize a wallet handle token
   ///
-  /// Unlock the wallet and return a wallet handle token that can be used for subsequent operations. These tokens expire periodically and must be renewed. You can &#x60;POST&#x60; the token to &#x60;/v1/wallet/info&#x60; to see how much time remains until expiration, and renew it with &#x60;/v1/wallet/renew&#x60;. When you&#39;re done, you can invalidate the token with &#x60;/v1/wallet/release&#x60;.
+  /// Unlock the wallet and return a wallet handle token that can be used for subsequent operations. These tokens expire periodically and must be renewed. You can &#x60;POST&#x60; the token to &#x60;/v2/wallet/info&#x60; to see how much time remains until expiration, and renew it with &#x60;/v2/wallet/renew&#x60;. When you&#39;re done, you can invalidate the token with &#x60;/v2/wallet/release&#x60;.
   Future<Response<APIV1POSTWalletInitResponse>> initWalletHandleToken(
     InitWalletHandleTokenRequest initializeWalletHandleTokenRequest, {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/wallet/init';
+    String _path = '/v2/wallet/init';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -708,7 +708,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/key/list';
+    String _path = '/v2/key/list';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -762,7 +762,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/multisig/list';
+    String _path = '/v2/multisig/list';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -816,7 +816,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/wallets';
+    String _path = '/v2/wallets';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -863,7 +863,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/wallet/release';
+    String _path = '/v2/wallet/release';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -919,7 +919,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/wallet/rename';
+    String _path = '/v2/wallet/rename';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -974,7 +974,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/wallet/renew';
+    String _path = '/v2/wallet/renew';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -1030,7 +1030,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/multisig/signprogram';
+    String _path = '/v2/multisig/signprogram';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -1086,7 +1086,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/multisig/sign';
+    String _path = '/v2/multisig/sign';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -1142,7 +1142,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/program/sign';
+    String _path = '/v2/program/sign';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -1196,7 +1196,7 @@ class KmdApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/transaction/sign';
+    String _path = '/v2/transaction/sign';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
