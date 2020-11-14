@@ -7,7 +7,7 @@ part of 'pending_transactions.dart';
 // **************************************************************************
 
 Serializer<PendingTransactions> _$pendingTransactionsSerializer =
-    _$PendingTransactionsSerializer();
+    new _$PendingTransactionsSerializer();
 
 class _$PendingTransactionsSerializer
     implements StructuredSerializer<PendingTransactions> {
@@ -43,7 +43,7 @@ class _$PendingTransactionsSerializer
   PendingTransactions deserialize(
       Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = PendingTransactionsBuilder();
+    final result = new PendingTransactionsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -75,7 +75,7 @@ class _$PendingTransactions extends PendingTransactions {
 
   factory _$PendingTransactions(
           [void Function(PendingTransactionsBuilder) updates]) =>
-      (PendingTransactionsBuilder()..update(updates)).build();
+      (new PendingTransactionsBuilder()..update(updates)).build();
 
   _$PendingTransactions._({this.totalTxns, this.truncatedTxns}) : super._();
 
@@ -86,7 +86,7 @@ class _$PendingTransactions extends PendingTransactions {
 
   @override
   PendingTransactionsBuilder toBuilder() =>
-      PendingTransactionsBuilder()..replace(this);
+      new PendingTransactionsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -120,7 +120,7 @@ class PendingTransactionsBuilder
 
   TransactionListBuilder _truncatedTxns;
   TransactionListBuilder get truncatedTxns =>
-      _$this._truncatedTxns ??= TransactionListBuilder();
+      _$this._truncatedTxns ??= new TransactionListBuilder();
   set truncatedTxns(TransactionListBuilder truncatedTxns) =>
       _$this._truncatedTxns = truncatedTxns;
 
@@ -138,7 +138,7 @@ class PendingTransactionsBuilder
   @override
   void replace(PendingTransactions other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$PendingTransactions;
   }
@@ -153,7 +153,7 @@ class PendingTransactionsBuilder
     _$PendingTransactions _$result;
     try {
       _$result = _$v ??
-          _$PendingTransactions._(
+          new _$PendingTransactions._(
               totalTxns: totalTxns, truncatedTxns: _truncatedTxns?.build());
     } catch (_) {
       String _$failedField;
@@ -161,7 +161,7 @@ class PendingTransactionsBuilder
         _$failedField = 'truncatedTxns';
         _truncatedTxns?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             'PendingTransactions', _$failedField, e.toString());
       }
       rethrow;

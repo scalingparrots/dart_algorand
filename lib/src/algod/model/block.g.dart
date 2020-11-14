@@ -6,7 +6,7 @@ part of 'block.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<Block> _$blockSerializer = _$BlockSerializer();
+Serializer<Block> _$blockSerializer = new _$BlockSerializer();
 
 class _$BlockSerializer implements StructuredSerializer<Block> {
   @override
@@ -138,7 +138,7 @@ class _$BlockSerializer implements StructuredSerializer<Block> {
   @override
   Block deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = BlockBuilder();
+    final result = new BlockBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -271,7 +271,7 @@ class _$Block extends Block {
   final String upgradePropose;
 
   factory _$Block([void Function(BlockBuilder) updates]) =>
-      (BlockBuilder()..update(updates)).build();
+      (new BlockBuilder()..update(updates)).build();
 
   _$Block._(
       {this.currentProtocol,
@@ -300,7 +300,7 @@ class _$Block extends Block {
       (toBuilder()..update(updates)).build();
 
   @override
-  BlockBuilder toBuilder() => BlockBuilder()..replace(this);
+  BlockBuilder toBuilder() => new BlockBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -476,7 +476,8 @@ class BlockBuilder implements Builder<Block, BlockBuilder> {
   set txnRoot(String txnRoot) => _$this._txnRoot = txnRoot;
 
   TransactionListBuilder _txns;
-  TransactionListBuilder get txns => _$this._txns ??= TransactionListBuilder();
+  TransactionListBuilder get txns =>
+      _$this._txns ??= new TransactionListBuilder();
   set txns(TransactionListBuilder txns) => _$this._txns = txns;
 
   bool _upgradeApprove;
@@ -520,7 +521,7 @@ class BlockBuilder implements Builder<Block, BlockBuilder> {
   @override
   void replace(Block other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$Block;
   }
@@ -535,7 +536,7 @@ class BlockBuilder implements Builder<Block, BlockBuilder> {
     _$Block _$result;
     try {
       _$result = _$v ??
-          _$Block._(
+          new _$Block._(
               currentProtocol: currentProtocol,
               frac: frac,
               hash: hash,
@@ -561,7 +562,8 @@ class BlockBuilder implements Builder<Block, BlockBuilder> {
         _$failedField = 'txns';
         _txns?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError('Block', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError(
+            'Block', _$failedField, e.toString());
       }
       rethrow;
     }

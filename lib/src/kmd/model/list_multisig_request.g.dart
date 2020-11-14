@@ -7,7 +7,7 @@ part of 'list_multisig_request.dart';
 // **************************************************************************
 
 Serializer<ListMultisigRequest> _$listMultisigRequestSerializer =
-    _$ListMultisigRequestSerializer();
+    new _$ListMultisigRequestSerializer();
 
 class _$ListMultisigRequestSerializer
     implements StructuredSerializer<ListMultisigRequest> {
@@ -37,7 +37,7 @@ class _$ListMultisigRequestSerializer
   ListMultisigRequest deserialize(
       Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = ListMultisigRequestBuilder();
+    final result = new ListMultisigRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -62,7 +62,7 @@ class _$ListMultisigRequest extends ListMultisigRequest {
 
   factory _$ListMultisigRequest(
           [void Function(ListMultisigRequestBuilder) updates]) =>
-      (ListMultisigRequestBuilder()..update(updates)).build();
+      (new ListMultisigRequestBuilder()..update(updates)).build();
 
   _$ListMultisigRequest._({this.walletHandleToken}) : super._();
 
@@ -73,7 +73,7 @@ class _$ListMultisigRequest extends ListMultisigRequest {
 
   @override
   ListMultisigRequestBuilder toBuilder() =>
-      ListMultisigRequestBuilder()..replace(this);
+      new ListMultisigRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -117,7 +117,7 @@ class ListMultisigRequestBuilder
   @override
   void replace(ListMultisigRequest other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$ListMultisigRequest;
   }
@@ -129,8 +129,8 @@ class ListMultisigRequestBuilder
 
   @override
   _$ListMultisigRequest build() {
-    final _$result =
-        _$v ?? _$ListMultisigRequest._(walletHandleToken: walletHandleToken);
+    final _$result = _$v ??
+        new _$ListMultisigRequest._(walletHandleToken: walletHandleToken);
     replace(_$result);
     return _$result;
   }

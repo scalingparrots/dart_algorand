@@ -7,7 +7,7 @@ part of 'transaction_params.dart';
 // **************************************************************************
 
 Serializer<TransactionParams> _$transactionParamsSerializer =
-    _$TransactionParamsSerializer();
+    new _$TransactionParamsSerializer();
 
 class _$TransactionParamsSerializer
     implements StructuredSerializer<TransactionParams> {
@@ -63,12 +63,11 @@ class _$TransactionParamsSerializer
   TransactionParams deserialize(
       Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = TransactionParamsBuilder();
+    final result = new TransactionParamsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
       final key = iterator.current as String;
-      print('key:' + key);
       iterator.moveNext();
       final dynamic value = iterator.current;
       switch (key) {
@@ -119,7 +118,7 @@ class _$TransactionParams extends TransactionParams {
 
   factory _$TransactionParams(
           [void Function(TransactionParamsBuilder) updates]) =>
-      (TransactionParamsBuilder()..update(updates)).build();
+      (new TransactionParamsBuilder()..update(updates)).build();
 
   _$TransactionParams._(
       {this.consensusVersion,
@@ -136,7 +135,7 @@ class _$TransactionParams extends TransactionParams {
 
   @override
   TransactionParamsBuilder toBuilder() =>
-      TransactionParamsBuilder()..replace(this);
+      new TransactionParamsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -165,12 +164,12 @@ class _$TransactionParams extends TransactionParams {
   @override
   String toString() {
     return (newBuiltValueToStringHelper('TransactionParams')
-          ..add('consensus-version', consensusVersion)
+          ..add('consensusVersion', consensusVersion)
           ..add('fee', fee)
-          ..add('genesis-id', genesisID)
-          ..add('genesis-hash', genesishashb64)
-          ..add('last-round', lastRound)
-          ..add('min-fee', minFee))
+          ..add('genesisID', genesisID)
+          ..add('genesishashb64', genesishashb64)
+          ..add('lastRound', lastRound)
+          ..add('minFee', minFee))
         .toString();
   }
 }
@@ -223,7 +222,7 @@ class TransactionParamsBuilder
   @override
   void replace(TransactionParams other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$TransactionParams;
   }
@@ -236,7 +235,7 @@ class TransactionParamsBuilder
   @override
   _$TransactionParams build() {
     final _$result = _$v ??
-        _$TransactionParams._(
+        new _$TransactionParams._(
             consensusVersion: consensusVersion,
             fee: fee,
             genesisID: genesisID,

@@ -7,7 +7,7 @@ part of 'apiv2_delete_key_response.dart';
 // **************************************************************************
 
 Serializer<APIV1DELETEKeyResponse> _$aPIV1DELETEKeyResponseSerializer =
-    _$APIV1DELETEKeyResponseSerializer();
+    new _$APIV1DELETEKeyResponseSerializer();
 
 class _$APIV1DELETEKeyResponseSerializer
     implements StructuredSerializer<APIV1DELETEKeyResponse> {
@@ -43,7 +43,7 @@ class _$APIV1DELETEKeyResponseSerializer
   APIV1DELETEKeyResponse deserialize(
       Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = APIV1DELETEKeyResponseBuilder();
+    final result = new APIV1DELETEKeyResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -74,7 +74,7 @@ class _$APIV1DELETEKeyResponse extends APIV1DELETEKeyResponse {
 
   factory _$APIV1DELETEKeyResponse(
           [void Function(APIV1DELETEKeyResponseBuilder) updates]) =>
-      (APIV1DELETEKeyResponseBuilder()..update(updates)).build();
+      (new APIV1DELETEKeyResponseBuilder()..update(updates)).build();
 
   _$APIV1DELETEKeyResponse._({this.error, this.message}) : super._();
 
@@ -85,7 +85,7 @@ class _$APIV1DELETEKeyResponse extends APIV1DELETEKeyResponse {
 
   @override
   APIV1DELETEKeyResponseBuilder toBuilder() =>
-      APIV1DELETEKeyResponseBuilder()..replace(this);
+      new APIV1DELETEKeyResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -135,7 +135,7 @@ class APIV1DELETEKeyResponseBuilder
   @override
   void replace(APIV1DELETEKeyResponse other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$APIV1DELETEKeyResponse;
   }
@@ -148,7 +148,7 @@ class APIV1DELETEKeyResponseBuilder
   @override
   _$APIV1DELETEKeyResponse build() {
     final _$result =
-        _$v ?? _$APIV1DELETEKeyResponse._(error: error, message: message);
+        _$v ?? new _$APIV1DELETEKeyResponse._(error: error, message: message);
     replace(_$result);
     return _$result;
   }

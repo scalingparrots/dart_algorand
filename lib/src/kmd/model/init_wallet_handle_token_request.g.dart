@@ -8,7 +8,7 @@ part of 'init_wallet_handle_token_request.dart';
 
 Serializer<InitWalletHandleTokenRequest>
     _$initWalletHandleTokenRequestSerializer =
-    _$InitWalletHandleTokenRequestSerializer();
+    new _$InitWalletHandleTokenRequestSerializer();
 
 class _$InitWalletHandleTokenRequestSerializer
     implements StructuredSerializer<InitWalletHandleTokenRequest> {
@@ -44,7 +44,7 @@ class _$InitWalletHandleTokenRequestSerializer
   InitWalletHandleTokenRequest deserialize(
       Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = InitWalletHandleTokenRequestBuilder();
+    final result = new InitWalletHandleTokenRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -75,7 +75,7 @@ class _$InitWalletHandleTokenRequest extends InitWalletHandleTokenRequest {
 
   factory _$InitWalletHandleTokenRequest(
           [void Function(InitWalletHandleTokenRequestBuilder) updates]) =>
-      (InitWalletHandleTokenRequestBuilder()..update(updates)).build();
+      (new InitWalletHandleTokenRequestBuilder()..update(updates)).build();
 
   _$InitWalletHandleTokenRequest._({this.walletId, this.walletPassword})
       : super._();
@@ -87,7 +87,7 @@ class _$InitWalletHandleTokenRequest extends InitWalletHandleTokenRequest {
 
   @override
   InitWalletHandleTokenRequestBuilder toBuilder() =>
-      InitWalletHandleTokenRequestBuilder()..replace(this);
+      new InitWalletHandleTokenRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -140,7 +140,7 @@ class InitWalletHandleTokenRequestBuilder
   @override
   void replace(InitWalletHandleTokenRequest other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$InitWalletHandleTokenRequest;
   }
@@ -153,7 +153,7 @@ class InitWalletHandleTokenRequestBuilder
   @override
   _$InitWalletHandleTokenRequest build() {
     final _$result = _$v ??
-        _$InitWalletHandleTokenRequest._(
+        new _$InitWalletHandleTokenRequest._(
             walletId: walletId, walletPassword: walletPassword);
     replace(_$result);
     return _$result;

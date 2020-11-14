@@ -8,7 +8,7 @@ part of 'apiv2_post_multisig_program_sign_response.dart';
 
 Serializer<APIV1POSTMultisigProgramSignResponse>
     _$aPIV1POSTMultisigProgramSignResponseSerializer =
-    _$APIV1POSTMultisigProgramSignResponseSerializer();
+    new _$APIV1POSTMultisigProgramSignResponseSerializer();
 
 class _$APIV1POSTMultisigProgramSignResponseSerializer
     implements StructuredSerializer<APIV1POSTMultisigProgramSignResponse> {
@@ -50,7 +50,7 @@ class _$APIV1POSTMultisigProgramSignResponseSerializer
   APIV1POSTMultisigProgramSignResponse deserialize(
       Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = APIV1POSTMultisigProgramSignResponseBuilder();
+    final result = new APIV1POSTMultisigProgramSignResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -89,7 +89,8 @@ class _$APIV1POSTMultisigProgramSignResponse
   factory _$APIV1POSTMultisigProgramSignResponse(
           [void Function(APIV1POSTMultisigProgramSignResponseBuilder)
               updates]) =>
-      (APIV1POSTMultisigProgramSignResponseBuilder()..update(updates)).build();
+      (new APIV1POSTMultisigProgramSignResponseBuilder()..update(updates))
+          .build();
 
   _$APIV1POSTMultisigProgramSignResponse._(
       {this.error, this.message, this.multisig})
@@ -102,7 +103,7 @@ class _$APIV1POSTMultisigProgramSignResponse
 
   @override
   APIV1POSTMultisigProgramSignResponseBuilder toBuilder() =>
-      APIV1POSTMultisigProgramSignResponseBuilder()..replace(this);
+      new APIV1POSTMultisigProgramSignResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -162,7 +163,7 @@ class APIV1POSTMultisigProgramSignResponseBuilder
   @override
   void replace(APIV1POSTMultisigProgramSignResponse other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$APIV1POSTMultisigProgramSignResponse;
   }
@@ -176,7 +177,7 @@ class APIV1POSTMultisigProgramSignResponseBuilder
   @override
   _$APIV1POSTMultisigProgramSignResponse build() {
     final _$result = _$v ??
-        _$APIV1POSTMultisigProgramSignResponse._(
+        new _$APIV1POSTMultisigProgramSignResponse._(
             error: error, message: message, multisig: multisig);
     replace(_$result);
     return _$result;

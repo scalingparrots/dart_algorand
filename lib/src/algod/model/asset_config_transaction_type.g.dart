@@ -7,7 +7,7 @@ part of 'asset_config_transaction_type.dart';
 // **************************************************************************
 
 Serializer<AssetConfigTransactionType> _$assetConfigTransactionTypeSerializer =
-    _$AssetConfigTransactionTypeSerializer();
+    new _$AssetConfigTransactionTypeSerializer();
 
 class _$AssetConfigTransactionTypeSerializer
     implements StructuredSerializer<AssetConfigTransactionType> {
@@ -43,7 +43,7 @@ class _$AssetConfigTransactionTypeSerializer
   AssetConfigTransactionType deserialize(
       Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = AssetConfigTransactionTypeBuilder();
+    final result = new AssetConfigTransactionTypeBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -74,7 +74,7 @@ class _$AssetConfigTransactionType extends AssetConfigTransactionType {
 
   factory _$AssetConfigTransactionType(
           [void Function(AssetConfigTransactionTypeBuilder) updates]) =>
-      (AssetConfigTransactionTypeBuilder()..update(updates)).build();
+      (new AssetConfigTransactionTypeBuilder()..update(updates)).build();
 
   _$AssetConfigTransactionType._({this.id, this.params}) : super._();
 
@@ -85,7 +85,7 @@ class _$AssetConfigTransactionType extends AssetConfigTransactionType {
 
   @override
   AssetConfigTransactionTypeBuilder toBuilder() =>
-      AssetConfigTransactionTypeBuilder()..replace(this);
+      new AssetConfigTransactionTypeBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -119,7 +119,7 @@ class AssetConfigTransactionTypeBuilder
   set id(int id) => _$this._id = id;
 
   AssetParamsBuilder _params;
-  AssetParamsBuilder get params => _$this._params ??= AssetParamsBuilder();
+  AssetParamsBuilder get params => _$this._params ??= new AssetParamsBuilder();
   set params(AssetParamsBuilder params) => _$this._params = params;
 
   AssetConfigTransactionTypeBuilder();
@@ -136,7 +136,7 @@ class AssetConfigTransactionTypeBuilder
   @override
   void replace(AssetConfigTransactionType other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$AssetConfigTransactionType;
   }
@@ -151,14 +151,14 @@ class AssetConfigTransactionTypeBuilder
     _$AssetConfigTransactionType _$result;
     try {
       _$result = _$v ??
-          _$AssetConfigTransactionType._(id: id, params: _params?.build());
+          new _$AssetConfigTransactionType._(id: id, params: _params?.build());
     } catch (_) {
       String _$failedField;
       try {
         _$failedField = 'params';
         _params?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             'AssetConfigTransactionType', _$failedField, e.toString());
       }
       rethrow;

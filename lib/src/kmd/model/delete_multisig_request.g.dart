@@ -7,7 +7,7 @@ part of 'delete_multisig_request.dart';
 // **************************************************************************
 
 Serializer<DeleteMultisigRequest> _$deleteMultisigRequestSerializer =
-    _$DeleteMultisigRequestSerializer();
+    new _$DeleteMultisigRequestSerializer();
 
 class _$DeleteMultisigRequestSerializer
     implements StructuredSerializer<DeleteMultisigRequest> {
@@ -49,7 +49,7 @@ class _$DeleteMultisigRequestSerializer
   DeleteMultisigRequest deserialize(
       Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = DeleteMultisigRequestBuilder();
+    final result = new DeleteMultisigRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -86,7 +86,7 @@ class _$DeleteMultisigRequest extends DeleteMultisigRequest {
 
   factory _$DeleteMultisigRequest(
           [void Function(DeleteMultisigRequestBuilder) updates]) =>
-      (DeleteMultisigRequestBuilder()..update(updates)).build();
+      (new DeleteMultisigRequestBuilder()..update(updates)).build();
 
   _$DeleteMultisigRequest._(
       {this.address, this.walletHandleToken, this.walletPassword})
@@ -99,7 +99,7 @@ class _$DeleteMultisigRequest extends DeleteMultisigRequest {
 
   @override
   DeleteMultisigRequestBuilder toBuilder() =>
-      DeleteMultisigRequestBuilder()..replace(this);
+      new DeleteMultisigRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -159,7 +159,7 @@ class DeleteMultisigRequestBuilder
   @override
   void replace(DeleteMultisigRequest other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$DeleteMultisigRequest;
   }
@@ -172,7 +172,7 @@ class DeleteMultisigRequestBuilder
   @override
   _$DeleteMultisigRequest build() {
     final _$result = _$v ??
-        _$DeleteMultisigRequest._(
+        new _$DeleteMultisigRequest._(
             address: address,
             walletHandleToken: walletHandleToken,
             walletPassword: walletPassword);

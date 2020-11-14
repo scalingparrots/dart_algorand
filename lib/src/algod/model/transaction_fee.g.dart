@@ -7,7 +7,7 @@ part of 'transaction_fee.dart';
 // **************************************************************************
 
 Serializer<TransactionFee> _$transactionFeeSerializer =
-    _$TransactionFeeSerializer();
+    new _$TransactionFeeSerializer();
 
 class _$TransactionFeeSerializer
     implements StructuredSerializer<TransactionFee> {
@@ -33,7 +33,7 @@ class _$TransactionFeeSerializer
   TransactionFee deserialize(
       Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = TransactionFeeBuilder();
+    final result = new TransactionFeeBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -57,7 +57,7 @@ class _$TransactionFee extends TransactionFee {
   final int fee;
 
   factory _$TransactionFee([void Function(TransactionFeeBuilder) updates]) =>
-      (TransactionFeeBuilder()..update(updates)).build();
+      (new TransactionFeeBuilder()..update(updates)).build();
 
   _$TransactionFee._({this.fee}) : super._();
 
@@ -66,7 +66,8 @@ class _$TransactionFee extends TransactionFee {
       (toBuilder()..update(updates)).build();
 
   @override
-  TransactionFeeBuilder toBuilder() => TransactionFeeBuilder()..replace(this);
+  TransactionFeeBuilder toBuilder() =>
+      new TransactionFeeBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -107,7 +108,7 @@ class TransactionFeeBuilder
   @override
   void replace(TransactionFee other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$TransactionFee;
   }
@@ -119,7 +120,7 @@ class TransactionFeeBuilder
 
   @override
   _$TransactionFee build() {
-    final _$result = _$v ?? _$TransactionFee._(fee: fee);
+    final _$result = _$v ?? new _$TransactionFee._(fee: fee);
     replace(_$result);
     return _$result;
   }
