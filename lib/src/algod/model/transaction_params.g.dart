@@ -34,25 +34,25 @@ class _$TransactionParamsSerializer
     }
     if (object.genesisID != null) {
       result
-        ..add('genesis-id')
+        ..add('genesisID')
         ..add(serializers.serialize(object.genesisID,
             specifiedType: const FullType(String)));
     }
     if (object.genesishashb64 != null) {
       result
-        ..add('genesis-hash')
+        ..add('genesishashb64')
         ..add(serializers.serialize(object.genesishashb64,
             specifiedType: const FullType(String)));
     }
     if (object.lastRound != null) {
       result
-        ..add('last-round')
+        ..add('lastRound')
         ..add(serializers.serialize(object.lastRound,
             specifiedType: const FullType(int)));
     }
     if (object.minFee != null) {
       result
-        ..add('min-fee')
+        ..add('minFee')
         ..add(serializers.serialize(object.minFee,
             specifiedType: const FullType(int)));
     }
@@ -79,19 +79,19 @@ class _$TransactionParamsSerializer
           result.fee = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
-        case 'genesis-id':
+        case 'genesisID':
           result.genesisID = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'genesis-hash':
+        case 'genesishashb64':
           result.genesishashb64 = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'last-round':
+        case 'lastRound':
           result.lastRound = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
-        case 'min-fee':
+        case 'minFee':
           result.minFee = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
