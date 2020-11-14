@@ -33,7 +33,7 @@ abstract class TransactionParams
   // Boilerplate code needed to wire-up generated code
   TransactionParams._();
 
-  factory TransactionParams([updates(TransactionParamsBuilder b)]) =
+  factory TransactionParams([Function(TransactionParamsBuilder b) updates]) =
       _$TransactionParams;
   static Serializer<TransactionParams> get serializer =>
       _$transactionParamsSerializer;
