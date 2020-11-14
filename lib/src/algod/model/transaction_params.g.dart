@@ -68,6 +68,7 @@ class _$TransactionParamsSerializer
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
       final key = iterator.current as String;
+      print('key:' + key);
       iterator.moveNext();
       final dynamic value = iterator.current;
       switch (key) {
