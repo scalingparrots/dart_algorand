@@ -7,7 +7,7 @@ abstract class TransactionParams
     implements Built<TransactionParams, TransactionParamsBuilder> {
   /* ConsensusVersion indicates the consensus protocol version as of LastRound. */
   @nullable
-  @BuiltValueField(wireName: r'consensus-version')
+  @BuiltValueField(wireName: r'consensusVersion')
   String get consensusVersion;
   /* Fee is the suggested transaction fee Fee is in units of micro-Algos per byte. Fee may fall to zero but transactions must still have a fee of at least MinTxnFee for the current network protocol. */
   @nullable

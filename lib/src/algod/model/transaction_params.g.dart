@@ -22,7 +22,7 @@ class _$TransactionParamsSerializer
     final result = <Object>[];
     if (object.consensusVersion != null) {
       result
-        ..add('consensus-version')
+        ..add('consensusVersion')
         ..add(serializers.serialize(object.consensusVersion,
             specifiedType: const FullType(String)));
     }
@@ -71,7 +71,7 @@ class _$TransactionParamsSerializer
       iterator.moveNext();
       final dynamic value = iterator.current;
       switch (key) {
-        case 'consensus-version':
+        case 'consensusVersion':
           result.consensusVersion = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
