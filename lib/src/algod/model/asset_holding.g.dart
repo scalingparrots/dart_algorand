@@ -20,8 +20,7 @@ class _$AssetHoldingSerializer implements StructuredSerializer<AssetHolding> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'asset-id',
-      serializers.serialize(object.assetId,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.assetId, specifiedType: const FullType(int)),
       'creator',
       serializers.serialize(object.creator,
           specifiedType: const FullType(String)),
@@ -47,7 +46,7 @@ class _$AssetHoldingSerializer implements StructuredSerializer<AssetHolding> {
       switch (key) {
         case 'asset-id':
           result.assetId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(int)) as int;
           break;
         case 'creator':
           result.creator = serializers.deserialize(value,
@@ -70,7 +69,7 @@ class _$AssetHoldingSerializer implements StructuredSerializer<AssetHolding> {
 
 class _$AssetHolding extends AssetHolding {
   @override
-  final String assetId;
+  final int assetId;
   @override
   final String creator;
   @override
@@ -136,9 +135,9 @@ class AssetHoldingBuilder
     implements Builder<AssetHolding, AssetHoldingBuilder> {
   _$AssetHolding _$v;
 
-  String _assetId;
-  String get assetId => _$this._assetId;
-  set assetId(String assetId) => _$this._assetId = assetId;
+  int _assetId;
+  int get assetId => _$this._assetId;
+  set assetId(int assetId) => _$this._assetId = assetId;
 
   String _creator;
   String get creator => _$this._creator;
