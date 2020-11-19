@@ -15,7 +15,7 @@ abstract class AssetList implements Built<AssetList, AssetListBuilder> {
   // Boilerplate code needed to wire-up generated code
   AssetList._();
 
-  factory AssetList([updates(AssetListBuilder b)]) = _$AssetList;
+  factory AssetList([Function(AssetListBuilder b) updates]) = _$AssetList;
 
   static Serializer<AssetList> get serializer => _$assetListSerializer;
 }

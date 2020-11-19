@@ -41,7 +41,7 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
         ..add('assets')
         ..add(serializers.serialize(object.assets,
             specifiedType: const FullType(BuiltMap,
-                const [const FullType(String), const FullType(AssetHolding)])));
+                const [const FullType(String), const FullType(AssetList)])));
     }
     if (object.participation != null) {
       result
@@ -108,10 +108,8 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
           break;
         case 'assets':
           result.assets.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltMap, const [
-                const FullType(String),
-                const FullType(AssetHolding)
-              ])));
+              specifiedType: const FullType(BuiltMap,
+                  const [const FullType(String), const FullType(AssetList)])));
           break;
         case 'participation':
           result.participation.replace(serializers.deserialize(value,
@@ -155,7 +153,7 @@ class _$Account extends Account {
   @override
   final int amountwithoutpendingrewards;
   @override
-  final BuiltMap<String, AssetHolding> assets;
+  final BuiltMap<String, AssetList> assets;
   @override
   final Participation participation;
   @override
@@ -263,11 +261,10 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
   set amountwithoutpendingrewards(int amountwithoutpendingrewards) =>
       _$this._amountwithoutpendingrewards = amountwithoutpendingrewards;
 
-  MapBuilder<String, AssetHolding> _assets;
-  MapBuilder<String, AssetHolding> get assets =>
-      _$this._assets ??= new MapBuilder<String, AssetHolding>();
-  set assets(MapBuilder<String, AssetHolding> assets) =>
-      _$this._assets = assets;
+  MapBuilder<String, AssetList> _assets;
+  MapBuilder<String, AssetList> get assets =>
+      _$this._assets ??= new MapBuilder<String, AssetList>();
+  set assets(MapBuilder<String, AssetList> assets) => _$this._assets = assets;
 
   ParticipationBuilder _participation;
   ParticipationBuilder get participation =>
