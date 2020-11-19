@@ -6,6 +6,7 @@ import 'model/account.dart';
 import 'model/asset.dart';
 import 'model/asset_config_transaction_type.dart';
 import 'model/asset_freeze_transaction_type.dart';
+import 'model/asset_holding_list.dart';
 import 'model/asset_list.dart';
 import 'model/asset_params.dart';
 import 'model/asset_transfer_transaction_type.dart';
@@ -33,6 +34,7 @@ part 'serializers.g.dart';
   Asset,
   AssetConfigTransactionType,
   AssetHolding,
+  AssetHoldingList,
   AssetFreezeTransactionType,
   AssetList,
   AssetParams,
