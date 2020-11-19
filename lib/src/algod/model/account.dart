@@ -53,10 +53,15 @@ abstract class Account implements Built<Account, AccountBuilder> {
   @BuiltValueField(wireName: r'status')
   String get status;
 
+  /* AssetParams specifies the parameters of assets created by this account. */
+  @nullable
+  @BuiltValueField(wireName: r'thisassettotal')
+  BuiltMap<String, AssetParams> get thisassettotal;
+
   // Boilerplate code needed to wire-up generated code
   Account._();
 
-  factory Account([updates(AccountBuilder b)]) = _$Account;
+  factory Account([Function(AccountBuilder b) updates]) = _$Account;
 
   static Serializer<Account> get serializer => _$accountSerializer;
 }
