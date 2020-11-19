@@ -29,6 +29,6 @@ abstract class Participation
   // Boilerplate code needed to wire-up generated code
   Participation._();
 
-  factory Participation([updates(ParticipationBuilder b)]) = _$Participation;
+  factory Participation([Function(ParticipationBuilder b) updates]) = _$Participation;
   static Serializer<Participation> get serializer => _$participationSerializer;
 }

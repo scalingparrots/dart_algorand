@@ -102,7 +102,7 @@ abstract class Block implements Built<Block, BlockBuilder> {
   // Boilerplate code needed to wire-up generated code
   Block._();
 
-  factory Block([updates(BlockBuilder b)]) = _$Block;
+  factory Block([Function(BlockBuilder b) updates]) = _$Block;
 
   static Serializer<Block> get serializer => _$blockSerializer;
 }

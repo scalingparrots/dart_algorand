@@ -29,7 +29,7 @@ abstract class KeyregTransactionType
   // Boilerplate code needed to wire-up generated code
   KeyregTransactionType._();
 
-  factory KeyregTransactionType([updates(KeyregTransactionTypeBuilder b)]) =
+  factory KeyregTransactionType([Function(KeyregTransactionTypeBuilder b) updates]) =
       _$KeyregTransactionType;
   static Serializer<KeyregTransactionType> get serializer =>
       _$keyregTransactionTypeSerializer;

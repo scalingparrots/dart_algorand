@@ -21,7 +21,7 @@ abstract class AssetConfigTransactionType
   AssetConfigTransactionType._();
 
   factory AssetConfigTransactionType(
-          [updates(AssetConfigTransactionTypeBuilder b)]) =
+          [Function(AssetConfigTransactionTypeBuilder b) updates]) =
       _$AssetConfigTransactionType;
 
   static Serializer<AssetConfigTransactionType> get serializer =>

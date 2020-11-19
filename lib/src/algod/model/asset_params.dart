@@ -56,6 +56,6 @@ abstract class AssetParams implements Built<AssetParams, AssetParamsBuilder> {
   // Boilerplate code needed to wire-up generated code
   AssetParams._();
 
-  factory AssetParams([updates(AssetParamsBuilder b)]) = _$AssetParams;
+  factory AssetParams([Function(AssetParamsBuilder b) updates]) = _$AssetParams;
   static Serializer<AssetParams> get serializer => _$assetParamsSerializer;
 }

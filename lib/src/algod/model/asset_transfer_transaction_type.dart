@@ -32,7 +32,7 @@ abstract class AssetTransferTransactionType
   AssetTransferTransactionType._();
 
   factory AssetTransferTransactionType(
-          [updates(AssetTransferTransactionTypeBuilder b)]) =
+          [Function(AssetTransferTransactionTypeBuilder b) updates]) =
       _$AssetTransferTransactionType;
   static Serializer<AssetTransferTransactionType> get serializer =>
       _$assetTransferTransactionTypeSerializer;

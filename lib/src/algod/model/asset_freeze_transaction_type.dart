@@ -23,7 +23,7 @@ abstract class AssetFreezeTransactionType
   AssetFreezeTransactionType._();
 
   factory AssetFreezeTransactionType(
-          [updates(AssetFreezeTransactionTypeBuilder b)]) =
+          [Function(AssetFreezeTransactionTypeBuilder b) updates]) =
       _$AssetFreezeTransactionType;
   static Serializer<AssetFreezeTransactionType> get serializer =>
       _$assetFreezeTransactionTypeSerializer;

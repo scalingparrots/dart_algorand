@@ -18,7 +18,7 @@ abstract class PendingTransactions
   // Boilerplate code needed to wire-up generated code
   PendingTransactions._();
 
-  factory PendingTransactions([updates(PendingTransactionsBuilder b)]) =
+  factory PendingTransactions([Function(PendingTransactionsBuilder b) updates]) =
       _$PendingTransactions;
 
   static Serializer<PendingTransactions> get serializer =>

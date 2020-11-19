@@ -33,7 +33,7 @@ abstract class PaymentTransactionType
   // Boilerplate code needed to wire-up generated code
   PaymentTransactionType._();
 
-  factory PaymentTransactionType([updates(PaymentTransactionTypeBuilder b)]) =
+  factory PaymentTransactionType([Function(PaymentTransactionTypeBuilder b) updates]) =
       _$PaymentTransactionType;
   static Serializer<PaymentTransactionType> get serializer =>
       _$paymentTransactionTypeSerializer;

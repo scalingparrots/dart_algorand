@@ -22,7 +22,7 @@ abstract class Supply implements Built<Supply, SupplyBuilder> {
   // Boilerplate code needed to wire-up generated code
   Supply._();
 
-  factory Supply([updates(SupplyBuilder b)]) = _$Supply;
+  factory Supply([Function(SupplyBuilder b) updates]) = _$Supply;
 
   static Serializer<Supply> get serializer => _$supplySerializer;
 }

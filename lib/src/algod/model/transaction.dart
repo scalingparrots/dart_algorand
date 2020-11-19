@@ -108,7 +108,7 @@ abstract class Transaction implements Built<Transaction, TransactionBuilder> {
   // Boilerplate code needed to wire-up generated code
   Transaction._();
 
-  factory Transaction([updates(TransactionBuilder b)]) = _$Transaction;
+  factory Transaction([Function(TransactionBuilder b) updates]) = _$Transaction;
 
   static Serializer<Transaction> get serializer => _$transactionSerializer;
 }

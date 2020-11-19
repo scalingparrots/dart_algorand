@@ -40,6 +40,6 @@ abstract class NodeStatus implements Built<NodeStatus, NodeStatusBuilder> {
   // Boilerplate code needed to wire-up generated code
   NodeStatus._();
 
-  factory NodeStatus([updates(NodeStatusBuilder b)]) = _$NodeStatus;
+  factory NodeStatus([Function(NodeStatusBuilder b) updates]) = _$NodeStatus;
   static Serializer<NodeStatus> get serializer => _$nodeStatusSerializer;
 }

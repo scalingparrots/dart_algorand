@@ -32,6 +32,6 @@ abstract class BuildVersion
   // Boilerplate code needed to wire-up generated code
   BuildVersion._();
 
-  factory BuildVersion([updates(BuildVersionBuilder b)]) = _$BuildVersion;
+  factory BuildVersion([Function(BuildVersionBuilder b) updates]) = _$BuildVersion;
   static Serializer<BuildVersion> get serializer => _$buildVersionSerializer;
 }
