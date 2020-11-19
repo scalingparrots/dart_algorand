@@ -12,7 +12,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AssetConfigTransactionType.serializer)
       ..add(AssetFreezeTransactionType.serializer)
       ..add(AssetHolding.serializer)
-      ..add(AssetHoldingList.serializer)
       ..add(AssetList.serializer)
       ..add(AssetParams.serializer)
       ..add(AssetTransferTransactionType.serializer)
@@ -35,20 +34,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(Asset)]),
           () => new ListBuilder<Asset>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(AssetHolding)]),
-          () => new ListBuilder<AssetHolding>())
-      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Transaction)]),
           () => new ListBuilder<Transaction>())
-      ..addBuilderFactory(
-          const FullType(BuiltMap, const [
-            const FullType(AssetHolding),
-            const FullType(AssetHoldingList)
-          ]),
-          () => new MapBuilder<AssetHolding, AssetHoldingList>())
       ..addBuilderFactory(
           const FullType(BuiltMap,
               const [const FullType(String), const FullType(AssetParams)]),
