@@ -18,7 +18,7 @@ abstract class Asset implements Built<Asset, AssetBuilder> {
   // Boilerplate code needed to wire-up generated code
   Asset._();
 
-  factory Asset([updates(AssetBuilder b)]) = _$Asset;
+  factory Asset([Function(AssetBuilder b) updates]) = _$Asset;
 
   static Serializer<Asset> get serializer => _$assetSerializer;
 }
