@@ -40,8 +40,7 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
       result
         ..add('assets')
         ..add(serializers.serialize(object.assets,
-            specifiedType: const FullType(
-                BuiltList, const [const FullType(AssetHolding)])));
+            specifiedType: const FullType(BuiltList)));
     }
     if (object.participation != null) {
       result
@@ -107,10 +106,8 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
               specifiedType: const FullType(int)) as int;
           break;
         case 'assets':
-          result.assets.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      BuiltList, const [const FullType(AssetHolding)]))
-              as BuiltList<Object>);
+          result.assets = serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList)) as BuiltList;
           break;
         case 'participation':
           result.participation.replace(serializers.deserialize(value,
@@ -154,7 +151,7 @@ class _$Account extends Account {
   @override
   final int amountwithoutpendingrewards;
   @override
-  final BuiltList<AssetHolding> assets;
+  final BuiltList assets;
   @override
   final Participation participation;
   @override
@@ -262,10 +259,9 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
   set amountwithoutpendingrewards(int amountwithoutpendingrewards) =>
       _$this._amountwithoutpendingrewards = amountwithoutpendingrewards;
 
-  ListBuilder<AssetHolding> _assets;
-  ListBuilder<AssetHolding> get assets =>
-      _$this._assets ??= new ListBuilder<AssetHolding>();
-  set assets(ListBuilder<AssetHolding> assets) => _$this._assets = assets;
+  BuiltList _assets;
+  BuiltList get assets => _$this._assets;
+  set assets(BuiltList assets) => _$this._assets = assets;
 
   ParticipationBuilder _participation;
   ParticipationBuilder get participation =>
@@ -303,7 +299,7 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
       _address = _$v.address;
       _amount = _$v.amount;
       _amountwithoutpendingrewards = _$v.amountwithoutpendingrewards;
-      _assets = _$v.assets?.toBuilder();
+      _assets = _$v.assets;
       _participation = _$v.participation?.toBuilder();
       _pendingrewards = _$v.pendingrewards;
       _rewards = _$v.rewards;
@@ -337,7 +333,7 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
               address: address,
               amount: amount,
               amountwithoutpendingrewards: amountwithoutpendingrewards,
-              assets: _assets?.build(),
+              assets: assets,
               participation: _participation?.build(),
               pendingrewards: pendingrewards,
               rewards: rewards,
@@ -347,8 +343,6 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
     } catch (_) {
       String _$failedField;
       try {
-        _$failedField = 'assets';
-        _assets?.build();
         _$failedField = 'participation';
         _participation?.build();
 
