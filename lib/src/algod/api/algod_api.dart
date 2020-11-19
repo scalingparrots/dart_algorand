@@ -32,7 +32,7 @@ class AlgodApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/account/{address}'
+    String _path = '/v2/accounts/{address}'
         .replaceAll('{' r'address' '}', address.toString());
 
     Map<String, dynamic> queryParams = {};
@@ -83,7 +83,7 @@ class AlgodApi {
     Map<String, String> headers,
   }) async {
     String _path =
-        '/v1/asset/{index}'.replaceAll('{' r'index' '}', index.toString());
+        '/v2/assets/{index}'.replaceAll('{' r'index' '}', index.toString());
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -133,7 +133,7 @@ class AlgodApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/assets';
+    String _path = '/v2/assets';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -185,7 +185,7 @@ class AlgodApi {
     Map<String, String> headers,
   }) async {
     String _path =
-        '/v1/block/{round}'.replaceAll('{' r'round' '}', round.toString());
+        '/v2/blocks/{round}'.replaceAll('{' r'round' '}', round.toString());
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -233,7 +233,7 @@ class AlgodApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/transactions/pending';
+    String _path = '/v2/transactions/pending';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -284,7 +284,7 @@ class AlgodApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/account/{addr}/transactions/pending'
+    String _path = '/v2/accounts/{addr}/transactions/pending'
         .replaceAll('{' r'addr' '}', addr.toString());
 
     Map<String, dynamic> queryParams = {};
@@ -334,7 +334,7 @@ class AlgodApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/status';
+    String _path = '/v2/status';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -382,7 +382,7 @@ class AlgodApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/ledger/supply';
+    String _path = '/v2/ledger/supply';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -543,7 +543,7 @@ class AlgodApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/transactions/pending/{txid}'
+    String _path = '/v2/transactions/pending/{txid}'
         .replaceAll('{' r'txid' '}', txid.toString());
 
     Map<String, dynamic> queryParams = {};
@@ -593,7 +593,7 @@ class AlgodApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/transactions';
+    String _path = '/v2/transactions';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -647,7 +647,7 @@ class AlgodApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/transactions/fee';
+    String _path = '/v2/transactions/fee';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -745,7 +745,7 @@ class AlgodApi {
     Map<String, String> headers,
   }) async {
     String _path =
-        '/v1/transaction/{txid}'.replaceAll('{' r'txid' '}', txid.toString());
+        '/v2/transactions/{txid}'.replaceAll('{' r'txid' '}', txid.toString());
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -795,7 +795,7 @@ class AlgodApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/account/{address}/transaction/{txid}'
+    String _path = '/v2/accounts/{address}/transaction/{txid}'
         .replaceAll('{' r'address' '}', address.toString())
         .replaceAll('{' r'txid' '}', txid.toString());
 
@@ -845,7 +845,7 @@ class AlgodApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/transactions/params';
+    String _path = '/v2/transactions/params';
 
     Map<String, dynamic> queryParams = {};
     Map<String, String> headerParams = Map.from(headers ?? {});
@@ -899,7 +899,7 @@ class AlgodApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/account/{address}/transactions'
+    String _path = '/v2/accounts/{address}/transactions'
         .replaceAll('{' r'address' '}', address.toString());
 
     Map<String, dynamic> queryParams = {};
@@ -954,7 +954,7 @@ class AlgodApi {
     CancelToken cancelToken,
     Map<String, String> headers,
   }) async {
-    String _path = '/v1/status/wait-for-block-after/{round}/'
+    String _path = '/v2/status/wait-for-block-after/{round}/'
         .replaceAll('{' r'round' '}', round.toString());
 
     Map<String, dynamic> queryParams = {};
