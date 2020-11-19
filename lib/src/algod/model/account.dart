@@ -27,7 +27,7 @@ abstract class Account implements Built<Account, AccountBuilder> {
   /* Assets specifies the holdings of assets by this account, indexed by the asset ID. */
   @nullable
   @BuiltValueField(wireName: r'assets')
-  BuiltMap<String, List<AssetHolding>> get assets;
+  ListBuilder<BuiltMap<String, AssetHolding>> get assets;
 
   @nullable
   @BuiltValueField(wireName: r'participation')
@@ -61,7 +61,7 @@ abstract class Account implements Built<Account, AccountBuilder> {
   // Boilerplate code needed to wire-up generated code
   Account._();
 
-  factory Account([Function(AccountBuilder b) updates]) = _$Account;
+  factory Account([updates(AccountBuilder b)]) = _$Account;
 
   static Serializer<Account> get serializer => _$accountSerializer;
 }

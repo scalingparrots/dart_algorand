@@ -40,12 +40,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(Transaction)]),
           () => new ListBuilder<Transaction>())
       ..addBuilderFactory(
-          const FullType(BuiltMap, const [
-            const FullType(String),
-            const FullType(List, const [const FullType(AssetHolding)])
-          ]),
-          () => new MapBuilder<String, List<AssetHolding>>())
-      ..addBuilderFactory(
           const FullType(BuiltMap,
               const [const FullType(String), const FullType(AssetParams)]),
           () => new MapBuilder<String, AssetParams>()))
