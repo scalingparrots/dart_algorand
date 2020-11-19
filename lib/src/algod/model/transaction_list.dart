@@ -15,7 +15,7 @@ abstract class TransactionList
   // Boilerplate code needed to wire-up generated code
   TransactionList._();
 
-  factory TransactionList([updates(TransactionListBuilder b)]) =
+  factory TransactionList([Function(TransactionListBuilder b) updates]) =
       _$TransactionList;
 
   static Serializer<TransactionList> get serializer =>

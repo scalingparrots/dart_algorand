@@ -1,7 +1,7 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'asset_holding.dart';
+import 'asset_holding_list.dart';
 import 'participation.dart';
 
 import 'asset_params.dart';
@@ -27,7 +27,7 @@ abstract class Account implements Built<Account, AccountBuilder> {
   /* Assets specifies the holdings of assets by this account, indexed by the asset ID. */
   @nullable
   @BuiltValueField(wireName: r'assets')
-  BuiltList<AssetHolding> get assets;
+  AssetHoldingList get assets;
 
   @nullable
   @BuiltValueField(wireName: r'participation')

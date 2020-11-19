@@ -40,8 +40,7 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
       result
         ..add('assets')
         ..add(serializers.serialize(object.assets,
-            specifiedType: const FullType(
-                BuiltList, const [const FullType(AssetHolding)])));
+            specifiedType: const FullType(AssetHoldingList)));
     }
     if (object.participation != null) {
       result
@@ -108,9 +107,8 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
           break;
         case 'assets':
           result.assets.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      BuiltList, const [const FullType(AssetHolding)]))
-              as BuiltList<Object>);
+                  specifiedType: const FullType(AssetHoldingList))
+              as AssetHoldingList);
           break;
         case 'participation':
           result.participation.replace(serializers.deserialize(value,
@@ -154,7 +152,7 @@ class _$Account extends Account {
   @override
   final int amountwithoutpendingrewards;
   @override
-  final BuiltList<AssetHolding> assets;
+  final AssetHoldingList assets;
   @override
   final Participation participation;
   @override
@@ -262,10 +260,10 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
   set amountwithoutpendingrewards(int amountwithoutpendingrewards) =>
       _$this._amountwithoutpendingrewards = amountwithoutpendingrewards;
 
-  ListBuilder<AssetHolding> _assets;
-  ListBuilder<AssetHolding> get assets =>
-      _$this._assets ??= new ListBuilder<AssetHolding>();
-  set assets(ListBuilder<AssetHolding> assets) => _$this._assets = assets;
+  AssetHoldingListBuilder _assets;
+  AssetHoldingListBuilder get assets =>
+      _$this._assets ??= new AssetHoldingListBuilder();
+  set assets(AssetHoldingListBuilder assets) => _$this._assets = assets;
 
   ParticipationBuilder _participation;
   ParticipationBuilder get participation =>

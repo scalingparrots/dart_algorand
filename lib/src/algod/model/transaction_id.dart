@@ -13,6 +13,6 @@ abstract class TransactionID
   // Boilerplate code needed to wire-up generated code
   TransactionID._();
 
-  factory TransactionID([updates(TransactionIDBuilder b)]) = _$TransactionID;
+  factory TransactionID([Function(TransactionIDBuilder b) updates]) = _$TransactionID;
   static Serializer<TransactionID> get serializer => _$transactionIDSerializer;
 }

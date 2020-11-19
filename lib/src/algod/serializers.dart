@@ -1,6 +1,7 @@
 import 'package:built_value/serializer.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/standard_json_plugin.dart';
+import 'package:dart_algorand/src/algod/model/asset_holding_list.dart';
 import 'model/asset_holding.dart';
 import 'model/account.dart';
 import 'model/asset.dart';
@@ -33,6 +34,7 @@ part 'serializers.g.dart';
   Asset,
   AssetConfigTransactionType,
   AssetHolding,
+  AssetHoldingList,
   AssetFreezeTransactionType,
   AssetList,
   AssetParams,

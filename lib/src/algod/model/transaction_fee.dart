@@ -13,7 +13,7 @@ abstract class TransactionFee
   // Boilerplate code needed to wire-up generated code
   TransactionFee._();
 
-  factory TransactionFee([updates(TransactionFeeBuilder b)]) = _$TransactionFee;
+  factory TransactionFee([Function(TransactionFeeBuilder b) updates]) = _$TransactionFee;
   static Serializer<TransactionFee> get serializer =>
       _$transactionFeeSerializer;
 }
