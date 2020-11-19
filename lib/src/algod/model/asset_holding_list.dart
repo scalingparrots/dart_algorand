@@ -11,7 +11,7 @@ abstract class AssetHoldingList implements Built<AssetHoldingList, AssetHoldingL
   /* AssetList is a list of assets */
   @nullable
   @BuiltValueField(wireName: r'assets')
-  BuiltList<AssetHolding> get assets;
+  AssetHolding get assets;
 
   // Boilerplate code needed to wire-up generated code
   AssetHoldingList._();

@@ -24,8 +24,7 @@ class _$AssetHoldingListSerializer
       result
         ..add('assets')
         ..add(serializers.serialize(object.assets,
-            specifiedType: const FullType(
-                BuiltList, const [const FullType(AssetHolding)])));
+            specifiedType: const FullType(AssetHolding)));
     }
     return result;
   }
@@ -44,9 +43,7 @@ class _$AssetHoldingListSerializer
       switch (key) {
         case 'assets':
           result.assets.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      BuiltList, const [const FullType(AssetHolding)]))
-              as BuiltList<Object>);
+              specifiedType: const FullType(AssetHolding)) as AssetHolding);
           break;
       }
     }
@@ -57,7 +54,7 @@ class _$AssetHoldingListSerializer
 
 class _$AssetHoldingList extends AssetHoldingList {
   @override
-  final BuiltList<AssetHolding> assets;
+  final AssetHolding assets;
 
   factory _$AssetHoldingList(
           [void Function(AssetHoldingListBuilder) updates]) =>
@@ -96,10 +93,10 @@ class AssetHoldingListBuilder
     implements Builder<AssetHoldingList, AssetHoldingListBuilder> {
   _$AssetHoldingList _$v;
 
-  ListBuilder<AssetHolding> _assets;
-  ListBuilder<AssetHolding> get assets =>
-      _$this._assets ??= new ListBuilder<AssetHolding>();
-  set assets(ListBuilder<AssetHolding> assets) => _$this._assets = assets;
+  AssetHoldingBuilder _assets;
+  AssetHoldingBuilder get assets =>
+      _$this._assets ??= new AssetHoldingBuilder();
+  set assets(AssetHoldingBuilder assets) => _$this._assets = assets;
 
   AssetHoldingListBuilder();
 
