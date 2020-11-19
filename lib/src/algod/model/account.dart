@@ -21,7 +21,7 @@ abstract class Account implements Built<Account, AccountBuilder> {
 
   /* AmountWithoutPendingRewards specifies the amount of MicroAlgos in the account, without the pending rewards. */
   @nullable
-  @BuiltValueField(wireName: r'amountwithoutpendingrewards')
+  @BuiltValueField(wireName: r'amount-without-pending-rewards')
   int get amountwithoutpendingrewards;
 
   /* Assets specifies the holdings of assets by this account, indexed by the asset ID. */
@@ -35,7 +35,7 @@ abstract class Account implements Built<Account, AccountBuilder> {
 
   /* PendingRewards specifies the amount of MicroAlgos of pending rewards in this account. */
   @nullable
-  @BuiltValueField(wireName: r'pendingrewards')
+  @BuiltValueField(wireName: r'pending-rewards')
   int get pendingrewards;
 
   /* Rewards indicates the total rewards of MicroAlgos the account has received, including pending rewards. */
@@ -52,11 +52,6 @@ abstract class Account implements Built<Account, AccountBuilder> {
   @nullable
   @BuiltValueField(wireName: r'status')
   String get status;
-
-  /* AssetParams specifies the parameters of assets created by this account. */
-  @nullable
-  @BuiltValueField(wireName: r'thisassettotal')
-  BuiltMap<String, AssetParams> get thisassettotal;
 
   // Boilerplate code needed to wire-up generated code
   Account._();
