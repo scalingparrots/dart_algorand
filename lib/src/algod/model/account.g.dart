@@ -41,7 +41,7 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
         ..add('assets')
         ..add(serializers.serialize(object.assets,
             specifiedType: const FullType(BuiltMap, const [
-              const FullType(String),
+              const FullType(AssetHolding),
               const FullType(AssetHoldingList)
             ])));
     }
@@ -111,7 +111,7 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
         case 'assets':
           result.assets.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltMap, const [
-                const FullType(String),
+                const FullType(AssetHolding),
                 const FullType(AssetHoldingList)
               ])));
           break;
@@ -157,7 +157,7 @@ class _$Account extends Account {
   @override
   final int amountwithoutpendingrewards;
   @override
-  final BuiltMap<String, AssetHoldingList> assets;
+  final BuiltMap<AssetHolding, AssetHoldingList> assets;
   @override
   final Participation participation;
   @override
@@ -265,10 +265,10 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
   set amountwithoutpendingrewards(int amountwithoutpendingrewards) =>
       _$this._amountwithoutpendingrewards = amountwithoutpendingrewards;
 
-  MapBuilder<String, AssetHoldingList> _assets;
-  MapBuilder<String, AssetHoldingList> get assets =>
-      _$this._assets ??= new MapBuilder<String, AssetHoldingList>();
-  set assets(MapBuilder<String, AssetHoldingList> assets) =>
+  MapBuilder<AssetHolding, AssetHoldingList> _assets;
+  MapBuilder<AssetHolding, AssetHoldingList> get assets =>
+      _$this._assets ??= new MapBuilder<AssetHolding, AssetHoldingList>();
+  set assets(MapBuilder<AssetHolding, AssetHoldingList> assets) =>
       _$this._assets = assets;
 
   ParticipationBuilder _participation;
