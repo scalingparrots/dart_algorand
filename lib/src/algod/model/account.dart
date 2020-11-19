@@ -28,7 +28,7 @@ abstract class Account implements Built<Account, AccountBuilder> {
   /* Assets specifies the holdings of assets by this account, indexed by the asset ID. */
   @nullable
   @BuiltValueField(wireName: r'assets')
-  AssetList get assets;
+  BuiltList<AssetHolding> get assets;
 
   @nullable
   @BuiltValueField(wireName: r'participation')
