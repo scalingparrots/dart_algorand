@@ -19,12 +19,15 @@ class _$AssetHoldingSerializer implements StructuredSerializer<AssetHolding> {
   Iterable<Object> serialize(Serializers serializers, AssetHolding object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
+      'asset-id',
+      serializers.serialize(object.assetId,
+          specifiedType: const FullType(String)),
       'creator',
       serializers.serialize(object.creator,
           specifiedType: const FullType(String)),
       'amount',
       serializers.serialize(object.amount, specifiedType: const FullType(int)),
-      'frozen',
+      'is-frozen',
       serializers.serialize(object.frozen, specifiedType: const FullType(bool)),
     ];
 
@@ -42,6 +45,10 @@ class _$AssetHoldingSerializer implements StructuredSerializer<AssetHolding> {
       iterator.moveNext();
       final dynamic value = iterator.current;
       switch (key) {
+        case 'asset-id':
+          result.assetId = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'creator':
           result.creator = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
@@ -50,7 +57,7 @@ class _$AssetHoldingSerializer implements StructuredSerializer<AssetHolding> {
           result.amount = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
-        case 'frozen':
+        case 'is-frozen':
           result.frozen = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
           break;
@@ -63,6 +70,8 @@ class _$AssetHoldingSerializer implements StructuredSerializer<AssetHolding> {
 
 class _$AssetHolding extends AssetHolding {
   @override
+  final String assetId;
+  @override
   final String creator;
   @override
   final int amount;
@@ -72,7 +81,11 @@ class _$AssetHolding extends AssetHolding {
   factory _$AssetHolding([void Function(AssetHoldingBuilder) updates]) =>
       (new AssetHoldingBuilder()..update(updates)).build();
 
-  _$AssetHolding._({this.creator, this.amount, this.frozen}) : super._() {
+  _$AssetHolding._({this.assetId, this.creator, this.amount, this.frozen})
+      : super._() {
+    if (assetId == null) {
+      throw new BuiltValueNullFieldError('AssetHolding', 'assetId');
+    }
     if (creator == null) {
       throw new BuiltValueNullFieldError('AssetHolding', 'creator');
     }
@@ -95,6 +108,7 @@ class _$AssetHolding extends AssetHolding {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AssetHolding &&
+        assetId == other.assetId &&
         creator == other.creator &&
         amount == other.amount &&
         frozen == other.frozen;
@@ -102,13 +116,15 @@ class _$AssetHolding extends AssetHolding {
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc($jc(0, creator.hashCode), amount.hashCode), frozen.hashCode));
+    return $jf($jc(
+        $jc($jc($jc(0, assetId.hashCode), creator.hashCode), amount.hashCode),
+        frozen.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AssetHolding')
+          ..add('assetId', assetId)
           ..add('creator', creator)
           ..add('amount', amount)
           ..add('frozen', frozen))
@@ -119,6 +135,10 @@ class _$AssetHolding extends AssetHolding {
 class AssetHoldingBuilder
     implements Builder<AssetHolding, AssetHoldingBuilder> {
   _$AssetHolding _$v;
+
+  String _assetId;
+  String get assetId => _$this._assetId;
+  set assetId(String assetId) => _$this._assetId = assetId;
 
   String _creator;
   String get creator => _$this._creator;
@@ -136,6 +156,7 @@ class AssetHoldingBuilder
 
   AssetHoldingBuilder get _$this {
     if (_$v != null) {
+      _assetId = _$v.assetId;
       _creator = _$v.creator;
       _amount = _$v.amount;
       _frozen = _$v.frozen;
@@ -160,7 +181,8 @@ class AssetHoldingBuilder
   @override
   _$AssetHolding build() {
     final _$result = _$v ??
-        new _$AssetHolding._(creator: creator, amount: amount, frozen: frozen);
+        new _$AssetHolding._(
+            assetId: assetId, creator: creator, amount: amount, frozen: frozen);
     replace(_$result);
     return _$result;
   }
