@@ -8,7 +8,7 @@ part of 'apiv1_post_wallet_release_response.dart';
 
 Serializer<APIV1POSTWalletReleaseResponse>
     _$aPIV1POSTWalletReleaseResponseSerializer =
-    _$APIV1POSTWalletReleaseResponseSerializer();
+    new _$APIV1POSTWalletReleaseResponseSerializer();
 
 class _$APIV1POSTWalletReleaseResponseSerializer
     implements StructuredSerializer<APIV1POSTWalletReleaseResponse> {
@@ -44,7 +44,7 @@ class _$APIV1POSTWalletReleaseResponseSerializer
   APIV1POSTWalletReleaseResponse deserialize(
       Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = APIV1POSTWalletReleaseResponseBuilder();
+    final result = new APIV1POSTWalletReleaseResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -75,7 +75,7 @@ class _$APIV1POSTWalletReleaseResponse extends APIV1POSTWalletReleaseResponse {
 
   factory _$APIV1POSTWalletReleaseResponse(
           [void Function(APIV1POSTWalletReleaseResponseBuilder) updates]) =>
-      (APIV1POSTWalletReleaseResponseBuilder()..update(updates)).build();
+      (new APIV1POSTWalletReleaseResponseBuilder()..update(updates)).build();
 
   _$APIV1POSTWalletReleaseResponse._({this.error, this.message}) : super._();
 
@@ -86,7 +86,7 @@ class _$APIV1POSTWalletReleaseResponse extends APIV1POSTWalletReleaseResponse {
 
   @override
   APIV1POSTWalletReleaseResponseBuilder toBuilder() =>
-      APIV1POSTWalletReleaseResponseBuilder()..replace(this);
+      new APIV1POSTWalletReleaseResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -138,7 +138,7 @@ class APIV1POSTWalletReleaseResponseBuilder
   @override
   void replace(APIV1POSTWalletReleaseResponse other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$APIV1POSTWalletReleaseResponse;
   }
@@ -151,7 +151,7 @@ class APIV1POSTWalletReleaseResponseBuilder
   @override
   _$APIV1POSTWalletReleaseResponse build() {
     final _$result = _$v ??
-        _$APIV1POSTWalletReleaseResponse._(error: error, message: message);
+        new _$APIV1POSTWalletReleaseResponse._(error: error, message: message);
     replace(_$result);
     return _$result;
   }
