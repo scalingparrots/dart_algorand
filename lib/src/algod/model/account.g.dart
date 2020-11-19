@@ -6,7 +6,7 @@ part of 'account.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<Account> _$accountSerializer = _$AccountSerializer();
+Serializer<Account> _$accountSerializer = new _$AccountSerializer();
 
 class _$AccountSerializer implements StructuredSerializer<Account> {
   @override
@@ -32,7 +32,7 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
     }
     if (object.amountwithoutpendingrewards != null) {
       result
-        ..add('amountwithoutpendingrewards')
+        ..add('amount-without-pending-rewards')
         ..add(serializers.serialize(object.amountwithoutpendingrewards,
             specifiedType: const FullType(int)));
     }
@@ -40,8 +40,8 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
       result
         ..add('assets')
         ..add(serializers.serialize(object.assets,
-            specifiedType: const FullType(
-                BuiltMap, [FullType(String), FullType(AssetHolding)])));
+            specifiedType: const FullType(BuiltMap,
+                const [const FullType(String), const FullType(AssetHolding)])));
     }
     if (object.participation != null) {
       result
@@ -51,7 +51,7 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
     }
     if (object.pendingrewards != null) {
       result
-        ..add('pendingrewards')
+        ..add('pending-rewards')
         ..add(serializers.serialize(object.pendingrewards,
             specifiedType: const FullType(int)));
     }
@@ -73,20 +73,13 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
         ..add(serializers.serialize(object.status,
             specifiedType: const FullType(String)));
     }
-    if (object.thisassettotal != null) {
-      result
-        ..add('thisassettotal')
-        ..add(serializers.serialize(object.thisassettotal,
-            specifiedType: const FullType(
-                BuiltMap, [FullType(String), FullType(AssetParams)])));
-    }
     return result;
   }
 
   @override
   Account deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = AccountBuilder();
+    final result = new AccountBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -102,20 +95,22 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
           result.amount = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
-        case 'amountwithoutpendingrewards':
+        case 'amount-without-pending-rewards':
           result.amountwithoutpendingrewards = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
         case 'assets':
           result.assets.replace(serializers.deserialize(value,
-              specifiedType: const FullType(
-                  BuiltMap, [FullType(String), FullType(AssetHolding)])));
+              specifiedType: const FullType(BuiltMap, const [
+                const FullType(String),
+                const FullType(AssetHolding)
+              ])));
           break;
         case 'participation':
           result.participation.replace(serializers.deserialize(value,
               specifiedType: const FullType(Participation)) as Participation);
           break;
-        case 'pendingrewards':
+        case 'pending-rewards':
           result.pendingrewards = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
@@ -130,11 +125,6 @@ class _$AccountSerializer implements StructuredSerializer<Account> {
         case 'status':
           result.status = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
-          break;
-        case 'thisassettotal':
-          result.thisassettotal.replace(serializers.deserialize(value,
-              specifiedType: const FullType(
-                  BuiltMap, [FullType(String), FullType(AssetParams)])));
           break;
       }
     }
@@ -162,11 +152,9 @@ class _$Account extends Account {
   final int round;
   @override
   final String status;
-  @override
-  final BuiltMap<String, AssetParams> thisassettotal;
 
   factory _$Account([void Function(AccountBuilder) updates]) =>
-      (AccountBuilder()..update(updates)).build();
+      (new AccountBuilder()..update(updates)).build();
 
   _$Account._(
       {this.address,
@@ -177,8 +165,7 @@ class _$Account extends Account {
       this.pendingrewards,
       this.rewards,
       this.round,
-      this.status,
-      this.thisassettotal})
+      this.status})
       : super._();
 
   @override
@@ -186,7 +173,7 @@ class _$Account extends Account {
       (toBuilder()..update(updates)).build();
 
   @override
-  AccountBuilder toBuilder() => AccountBuilder()..replace(this);
+  AccountBuilder toBuilder() => new AccountBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -200,8 +187,7 @@ class _$Account extends Account {
         pendingrewards == other.pendingrewards &&
         rewards == other.rewards &&
         round == other.round &&
-        status == other.status &&
-        thisassettotal == other.thisassettotal;
+        status == other.status;
   }
 
   @override
@@ -212,18 +198,14 @@ class _$Account extends Account {
                 $jc(
                     $jc(
                         $jc(
-                            $jc(
-                                $jc(
-                                    $jc($jc(0, address.hashCode),
-                                        amount.hashCode),
-                                    amountwithoutpendingrewards.hashCode),
-                                assets.hashCode),
-                            participation.hashCode),
-                        pendingrewards.hashCode),
-                    rewards.hashCode),
-                round.hashCode),
-            status.hashCode),
-        thisassettotal.hashCode));
+                            $jc($jc($jc(0, address.hashCode), amount.hashCode),
+                                amountwithoutpendingrewards.hashCode),
+                            assets.hashCode),
+                        participation.hashCode),
+                    pendingrewards.hashCode),
+                rewards.hashCode),
+            round.hashCode),
+        status.hashCode));
   }
 
   @override
@@ -237,8 +219,7 @@ class _$Account extends Account {
           ..add('pendingrewards', pendingrewards)
           ..add('rewards', rewards)
           ..add('round', round)
-          ..add('status', status)
-          ..add('thisassettotal', thisassettotal))
+          ..add('status', status))
         .toString();
   }
 }
@@ -261,13 +242,13 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
 
   MapBuilder<String, AssetHolding> _assets;
   MapBuilder<String, AssetHolding> get assets =>
-      _$this._assets ??= MapBuilder<String, AssetHolding>();
+      _$this._assets ??= new MapBuilder<String, AssetHolding>();
   set assets(MapBuilder<String, AssetHolding> assets) =>
       _$this._assets = assets;
 
   ParticipationBuilder _participation;
   ParticipationBuilder get participation =>
-      _$this._participation ??= ParticipationBuilder();
+      _$this._participation ??= new ParticipationBuilder();
   set participation(ParticipationBuilder participation) =>
       _$this._participation = participation;
 
@@ -288,12 +269,6 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
   String get status => _$this._status;
   set status(String status) => _$this._status = status;
 
-  MapBuilder<String, AssetParams> _thisassettotal;
-  MapBuilder<String, AssetParams> get thisassettotal =>
-      _$this._thisassettotal ??= MapBuilder<String, AssetParams>();
-  set thisassettotal(MapBuilder<String, AssetParams> thisassettotal) =>
-      _$this._thisassettotal = thisassettotal;
-
   AccountBuilder();
 
   AccountBuilder get _$this {
@@ -307,7 +282,6 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
       _rewards = _$v.rewards;
       _round = _$v.round;
       _status = _$v.status;
-      _thisassettotal = _$v.thisassettotal?.toBuilder();
       _$v = null;
     }
     return this;
@@ -316,7 +290,7 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
   @override
   void replace(Account other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$Account;
   }
@@ -331,7 +305,7 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
     _$Account _$result;
     try {
       _$result = _$v ??
-          _$Account._(
+          new _$Account._(
               address: address,
               amount: amount,
               amountwithoutpendingrewards: amountwithoutpendingrewards,
@@ -340,8 +314,7 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
               pendingrewards: pendingrewards,
               rewards: rewards,
               round: round,
-              status: status,
-              thisassettotal: _thisassettotal?.build());
+              status: status);
     } catch (_) {
       String _$failedField;
       try {
@@ -349,11 +322,8 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
         _assets?.build();
         _$failedField = 'participation';
         _participation?.build();
-
-        _$failedField = 'thisassettotal';
-        _thisassettotal?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             'Account', _$failedField, e.toString());
       }
       rethrow;

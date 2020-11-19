@@ -6,7 +6,7 @@ part of 'version.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<Version> _$versionSerializer = _$VersionSerializer();
+Serializer<Version> _$versionSerializer = new _$VersionSerializer();
 
 class _$VersionSerializer implements StructuredSerializer<Version> {
   @override
@@ -40,7 +40,8 @@ class _$VersionSerializer implements StructuredSerializer<Version> {
       result
         ..add('versions')
         ..add(serializers.serialize(object.versions,
-            specifiedType: const FullType(BuiltList, [FullType(String)])));
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(String)])));
     }
     return result;
   }
@@ -48,7 +49,7 @@ class _$VersionSerializer implements StructuredSerializer<Version> {
   @override
   Version deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = VersionBuilder();
+    final result = new VersionBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -70,7 +71,8 @@ class _$VersionSerializer implements StructuredSerializer<Version> {
           break;
         case 'versions':
           result.versions.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
+                  specifiedType:
+                      const FullType(BuiltList, const [const FullType(String)]))
               as BuiltList<Object>);
           break;
       }
@@ -91,7 +93,7 @@ class _$Version extends Version {
   final BuiltList<String> versions;
 
   factory _$Version([void Function(VersionBuilder) updates]) =>
-      (VersionBuilder()..update(updates)).build();
+      (new VersionBuilder()..update(updates)).build();
 
   _$Version._({this.vbuild, this.genesisHashB64, this.genesisId, this.versions})
       : super._();
@@ -101,7 +103,7 @@ class _$Version extends Version {
       (toBuilder()..update(updates)).build();
 
   @override
-  VersionBuilder toBuilder() => VersionBuilder()..replace(this);
+  VersionBuilder toBuilder() => new VersionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -136,7 +138,8 @@ class VersionBuilder implements Builder<Version, VersionBuilder> {
   _$Version _$v;
 
   BuildVersionBuilder _vbuild;
-  BuildVersionBuilder get vbuild => _$this._vbuild ??= BuildVersionBuilder();
+  BuildVersionBuilder get vbuild =>
+      _$this._vbuild ??= new BuildVersionBuilder();
   set vbuild(BuildVersionBuilder vbuild) => _$this._vbuild = vbuild;
 
   String _genesisHashB64;
@@ -150,7 +153,7 @@ class VersionBuilder implements Builder<Version, VersionBuilder> {
 
   ListBuilder<String> _versions;
   ListBuilder<String> get versions =>
-      _$this._versions ??= ListBuilder<String>();
+      _$this._versions ??= new ListBuilder<String>();
   set versions(ListBuilder<String> versions) => _$this._versions = versions;
 
   VersionBuilder();
@@ -169,7 +172,7 @@ class VersionBuilder implements Builder<Version, VersionBuilder> {
   @override
   void replace(Version other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$Version;
   }
@@ -184,7 +187,7 @@ class VersionBuilder implements Builder<Version, VersionBuilder> {
     _$Version _$result;
     try {
       _$result = _$v ??
-          _$Version._(
+          new _$Version._(
               vbuild: _vbuild?.build(),
               genesisHashB64: genesisHashB64,
               genesisId: genesisId,
@@ -198,7 +201,7 @@ class VersionBuilder implements Builder<Version, VersionBuilder> {
         _$failedField = 'versions';
         _versions?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             'Version', _$failedField, e.toString());
       }
       rethrow;

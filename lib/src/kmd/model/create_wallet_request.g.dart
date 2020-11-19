@@ -7,7 +7,7 @@ part of 'create_wallet_request.dart';
 // **************************************************************************
 
 Serializer<CreateWalletRequest> _$createWalletRequestSerializer =
-    _$CreateWalletRequestSerializer();
+    new _$CreateWalletRequestSerializer();
 
 class _$CreateWalletRequestSerializer
     implements StructuredSerializer<CreateWalletRequest> {
@@ -55,7 +55,7 @@ class _$CreateWalletRequestSerializer
   CreateWalletRequest deserialize(
       Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = CreateWalletRequestBuilder();
+    final result = new CreateWalletRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -98,7 +98,7 @@ class _$CreateWalletRequest extends CreateWalletRequest {
 
   factory _$CreateWalletRequest(
           [void Function(CreateWalletRequestBuilder) updates]) =>
-      (CreateWalletRequestBuilder()..update(updates)).build();
+      (new CreateWalletRequestBuilder()..update(updates)).build();
 
   _$CreateWalletRequest._(
       {this.masterDerivationKey,
@@ -114,7 +114,7 @@ class _$CreateWalletRequest extends CreateWalletRequest {
 
   @override
   CreateWalletRequestBuilder toBuilder() =>
-      CreateWalletRequestBuilder()..replace(this);
+      new CreateWalletRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -186,7 +186,7 @@ class CreateWalletRequestBuilder
   @override
   void replace(CreateWalletRequest other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$CreateWalletRequest;
   }
@@ -199,7 +199,7 @@ class CreateWalletRequestBuilder
   @override
   _$CreateWalletRequest build() {
     final _$result = _$v ??
-        _$CreateWalletRequest._(
+        new _$CreateWalletRequest._(
             masterDerivationKey: masterDerivationKey,
             walletDriverName: walletDriverName,
             walletName: walletName,

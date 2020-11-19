@@ -7,7 +7,7 @@ part of 'versions_response.dart';
 // **************************************************************************
 
 Serializer<VersionsResponse> _$versionsResponseSerializer =
-    _$VersionsResponseSerializer();
+    new _$VersionsResponseSerializer();
 
 class _$VersionsResponseSerializer
     implements StructuredSerializer<VersionsResponse> {
@@ -24,7 +24,8 @@ class _$VersionsResponseSerializer
       result
         ..add('versions')
         ..add(serializers.serialize(object.versions,
-            specifiedType: const FullType(BuiltList, [FullType(String)])));
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(String)])));
     }
     return result;
   }
@@ -33,7 +34,7 @@ class _$VersionsResponseSerializer
   VersionsResponse deserialize(
       Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = VersionsResponseBuilder();
+    final result = new VersionsResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -43,7 +44,8 @@ class _$VersionsResponseSerializer
       switch (key) {
         case 'versions':
           result.versions.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(BuiltList, [FullType(String)]))
+                  specifiedType:
+                      const FullType(BuiltList, const [const FullType(String)]))
               as BuiltList<Object>);
           break;
       }
@@ -59,7 +61,7 @@ class _$VersionsResponse extends VersionsResponse {
 
   factory _$VersionsResponse(
           [void Function(VersionsResponseBuilder) updates]) =>
-      (VersionsResponseBuilder()..update(updates)).build();
+      (new VersionsResponseBuilder()..update(updates)).build();
 
   _$VersionsResponse._({this.versions}) : super._();
 
@@ -69,7 +71,7 @@ class _$VersionsResponse extends VersionsResponse {
 
   @override
   VersionsResponseBuilder toBuilder() =>
-      VersionsResponseBuilder()..replace(this);
+      new VersionsResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -96,7 +98,7 @@ class VersionsResponseBuilder
 
   ListBuilder<String> _versions;
   ListBuilder<String> get versions =>
-      _$this._versions ??= ListBuilder<String>();
+      _$this._versions ??= new ListBuilder<String>();
   set versions(ListBuilder<String> versions) => _$this._versions = versions;
 
   VersionsResponseBuilder();
@@ -112,7 +114,7 @@ class VersionsResponseBuilder
   @override
   void replace(VersionsResponse other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$VersionsResponse;
   }
@@ -126,14 +128,14 @@ class VersionsResponseBuilder
   _$VersionsResponse build() {
     _$VersionsResponse _$result;
     try {
-      _$result = _$v ?? _$VersionsResponse._(versions: _versions?.build());
+      _$result = _$v ?? new _$VersionsResponse._(versions: _versions?.build());
     } catch (_) {
       String _$failedField;
       try {
         _$failedField = 'versions';
         _versions?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(
+        throw new BuiltValueNestedFieldError(
             'VersionsResponse', _$failedField, e.toString());
       }
       rethrow;

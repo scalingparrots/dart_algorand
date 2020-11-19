@@ -7,7 +7,7 @@ part of 'sign_transaction_request.dart';
 // **************************************************************************
 
 Serializer<SignTransactionRequest> _$signTransactionRequestSerializer =
-    _$SignTransactionRequestSerializer();
+    new _$SignTransactionRequestSerializer();
 
 class _$SignTransactionRequestSerializer
     implements StructuredSerializer<SignTransactionRequest> {
@@ -49,7 +49,7 @@ class _$SignTransactionRequestSerializer
   SignTransactionRequest deserialize(
       Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = SignTransactionRequestBuilder();
+    final result = new SignTransactionRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -86,7 +86,7 @@ class _$SignTransactionRequest extends SignTransactionRequest {
 
   factory _$SignTransactionRequest(
           [void Function(SignTransactionRequestBuilder) updates]) =>
-      (SignTransactionRequestBuilder()..update(updates)).build();
+      (new SignTransactionRequestBuilder()..update(updates)).build();
 
   _$SignTransactionRequest._(
       {this.transaction, this.walletHandleToken, this.walletPassword})
@@ -99,7 +99,7 @@ class _$SignTransactionRequest extends SignTransactionRequest {
 
   @override
   SignTransactionRequestBuilder toBuilder() =>
-      SignTransactionRequestBuilder()..replace(this);
+      new SignTransactionRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -160,7 +160,7 @@ class SignTransactionRequestBuilder
   @override
   void replace(SignTransactionRequest other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$SignTransactionRequest;
   }
@@ -173,7 +173,7 @@ class SignTransactionRequestBuilder
   @override
   _$SignTransactionRequest build() {
     final _$result = _$v ??
-        _$SignTransactionRequest._(
+        new _$SignTransactionRequest._(
             transaction: transaction,
             walletHandleToken: walletHandleToken,
             walletPassword: walletPassword);

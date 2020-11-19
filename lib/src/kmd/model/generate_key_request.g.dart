@@ -7,7 +7,7 @@ part of 'generate_key_request.dart';
 // **************************************************************************
 
 Serializer<GenerateKeyRequest> _$generateKeyRequestSerializer =
-    _$GenerateKeyRequestSerializer();
+    new _$GenerateKeyRequestSerializer();
 
 class _$GenerateKeyRequestSerializer
     implements StructuredSerializer<GenerateKeyRequest> {
@@ -39,7 +39,7 @@ class _$GenerateKeyRequestSerializer
   GenerateKeyRequest deserialize(
       Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = GenerateKeyRequestBuilder();
+    final result = new GenerateKeyRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -70,7 +70,7 @@ class _$GenerateKeyRequest extends GenerateKeyRequest {
 
   factory _$GenerateKeyRequest(
           [void Function(GenerateKeyRequestBuilder) updates]) =>
-      (GenerateKeyRequestBuilder()..update(updates)).build();
+      (new GenerateKeyRequestBuilder()..update(updates)).build();
 
   _$GenerateKeyRequest._({this.displayMnemonic, this.walletHandleToken})
       : super._();
@@ -82,7 +82,7 @@ class _$GenerateKeyRequest extends GenerateKeyRequest {
 
   @override
   GenerateKeyRequestBuilder toBuilder() =>
-      GenerateKeyRequestBuilder()..replace(this);
+      new GenerateKeyRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -135,7 +135,7 @@ class GenerateKeyRequestBuilder
   @override
   void replace(GenerateKeyRequest other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$GenerateKeyRequest;
   }
@@ -148,7 +148,7 @@ class GenerateKeyRequestBuilder
   @override
   _$GenerateKeyRequest build() {
     final _$result = _$v ??
-        _$GenerateKeyRequest._(
+        new _$GenerateKeyRequest._(
             displayMnemonic: displayMnemonic,
             walletHandleToken: walletHandleToken);
     replace(_$result);

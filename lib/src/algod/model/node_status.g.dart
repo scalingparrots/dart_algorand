@@ -6,7 +6,7 @@ part of 'node_status.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<NodeStatus> _$nodeStatusSerializer = _$NodeStatusSerializer();
+Serializer<NodeStatus> _$nodeStatusSerializer = new _$NodeStatusSerializer();
 
 class _$NodeStatusSerializer implements StructuredSerializer<NodeStatus> {
   @override
@@ -72,7 +72,7 @@ class _$NodeStatusSerializer implements StructuredSerializer<NodeStatus> {
   @override
   NodeStatus deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = NodeStatusBuilder();
+    final result = new NodeStatusBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -138,7 +138,7 @@ class _$NodeStatus extends NodeStatus {
   final int timeSinceLastRound;
 
   factory _$NodeStatus([void Function(NodeStatusBuilder) updates]) =>
-      (NodeStatusBuilder()..update(updates)).build();
+      (new NodeStatusBuilder()..update(updates)).build();
 
   _$NodeStatus._(
       {this.catchupTime,
@@ -156,7 +156,7 @@ class _$NodeStatus extends NodeStatus {
       (toBuilder()..update(updates)).build();
 
   @override
-  NodeStatusBuilder toBuilder() => NodeStatusBuilder()..replace(this);
+  NodeStatusBuilder toBuilder() => new NodeStatusBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -267,7 +267,7 @@ class NodeStatusBuilder implements Builder<NodeStatus, NodeStatusBuilder> {
   @override
   void replace(NodeStatus other) {
     if (other == null) {
-      throw ArgumentError.notNull('other');
+      throw new ArgumentError.notNull('other');
     }
     _$v = other as _$NodeStatus;
   }
@@ -280,7 +280,7 @@ class NodeStatusBuilder implements Builder<NodeStatus, NodeStatusBuilder> {
   @override
   _$NodeStatus build() {
     final _$result = _$v ??
-        _$NodeStatus._(
+        new _$NodeStatus._(
             catchupTime: catchupTime,
             hasSyncedSinceStartup: hasSyncedSinceStartup,
             lastConsensusVersion: lastConsensusVersion,
